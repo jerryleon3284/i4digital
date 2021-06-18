@@ -1,0 +1,52 @@
+<div class="container">
+  <form style="background: black;padding-top: 20px;margin-top: 20px; padding-bottom: 2px;">
+    <div class="form-group">
+      <div class="input-group" style="padding-left: 10px; width: 100% !important">
+        <input id="filter" name="search" [(ngModel)]="userInput" placeholder="Digita Nombre,Email o Usuario" type="text">
+        <i id="filterIcon" class="fa fa-search"></i>
+      </div>
+
+    </div>
+  </form>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>
+          Nombres
+        </th>
+
+        <th>
+          Usuario
+        </th>
+
+        <th>
+          Correo
+        </th>
+
+        <th>
+          Celular
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let user of users | userFilter:userInput">
+          <td>
+            {{user.name}}
+          </td>
+
+          <td>
+            {{user.username}}
+          </td>
+
+          <td>
+            {{user.email}}
+          </td>
+
+          <td>
+            {{user.phone}}
+          </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

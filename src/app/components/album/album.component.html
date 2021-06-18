@@ -1,0 +1,14 @@
+<div class="container" *ngIf="(images && images.length>0) && (albums && albums.length>0)">
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let album of albums">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" [src]="images[album.userId].url" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Posicion {{album.id}}</h5>
+          <p class="card-text"> {{album.title}} </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

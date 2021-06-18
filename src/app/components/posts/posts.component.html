@@ -1,0 +1,50 @@
+<div class="overlay" [ngStyle]="{'display':display}"></div>
+<!-- Modal -->
+<div class="modal" [ngStyle]="{'display':display}" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar Publicacion</h5>
+        <button (click)="closeModal(myForm)" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form #myForm="ngForm">
+              <div class="form-group">
+                  <input type="text" class="form-control" placeholder = 'Ingrese Titulo'  [(ngModel)]='post.title' name="title" #title required>
+              </div>
+              <div class="form-group">
+                <label for="title">Descripción</label>
+                <textarea class="form-control rounded-0"  rows="10"  [(ngModel)]='post.body' name="body" #body required ></textarea>
+
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]='post.id' name="id" #id hidden>
+            </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-dismiss="modal" (click)="closeModal(myForm)">Cancelar</button>
+        <input  type="button" class="btn btn-primary" (click)="addPost(myForm)" value='Crear Publicación' [disabled]="myForm.invalid">
+      </div>
+    </div>
+  </div>
+  <!--fin de modal -->
+
+</div>
+<div class="container" >
+  <button class="btn btn-primary" (click)="openModalDialog()">Agregar Publicación</button>
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let post of posts" style="margin-top: 20px;">
+      <div class="card" style="width: 18rem;height: 100%;">
+        <div class="card-body">
+          <h5 class="card-title">Titulo {{post.title}}</h5>
+          <p class="card-text"> {{post.body}} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
