@@ -30,4 +30,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 se debe ejecutar npm i para crear el node_modules.
 para correr en local basta solamente ejecutar npm start  y tomara la base de datos db.json para local usamos json-server y para la ejecucion concurrently
 
+para verlo en produccion pueden dirigirse al siguente link https://i4digitalprueba.web.app/index.html
 
